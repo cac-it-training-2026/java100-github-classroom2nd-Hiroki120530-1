@@ -86,8 +86,19 @@ public class Detective {
 		String numStr = br.readLine();
 		int num = Integer.parseInt(numStr);
 
-		//ここに記述する
+		if (num == 1) {
+			System.out.println("\n探偵：");
+			System.out.println("不正解です。");
+		} else {
+			System.out.println("\n探偵：");
+			System.out.println("正解です。");
+		}
 
+		//ここに記述する
+		//80~60kgの間
+		//身長185以上
+		//裏山に逃げた
+		//犯人はO
 	}
 
 }
