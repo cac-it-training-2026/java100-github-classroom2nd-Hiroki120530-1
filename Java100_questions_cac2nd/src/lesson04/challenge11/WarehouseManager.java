@@ -66,12 +66,42 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
-
+		int[] MQArrayC = new int[5];
+		int[] MQArrayD = new int[5];
+		int[] MQArrayE = new int[5];
+		int five1 = 0;
+		int five2 = 0;
+		int five3 = 0;
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
+		for (int i = 0; i < 5; i++) {
+			if ((int) (Math.random() * 4) == 0) {
+				MQArrayC[i] = 0;
+			} else {
+				five1 = (int) (Math.random() * 10) + 1;
+				MQArrayC[i] = five1;
+			}
 
+		}
+
+		for (int i = 0; i < 5; i++) {
+			if ((int) (Math.random() * 4) == 0) {
+				MQArrayD[i] = 0;
+			} else {
+				five2 = (int) (Math.random() * 10) + 1;
+				MQArrayD[i] = five2;
+			}
+		}
+
+		for (int i = 0; i < 5; i++) {
+			if ((int) (Math.random() * 4) == 0) {
+				MQArrayE[i] = 0;
+			} else {
+				five3 = (int) (Math.random() * 10) + 1;
+				MQArrayE[i] = five3;
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送の件、お願いします。\n");
@@ -81,48 +111,122 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayC.length; i++) {
+			System.out.print(MQArrayC[i]);
+			if (i != (MQArrayC.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayD.length; i++) {
+			System.out.print(MQArrayD[i]);
+			if (i != (MQArrayD.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
-
+		for (int i = 0; i < MQArrayE.length; i++) {
+			System.out.print(MQArrayE[i]);
+			if (i != (MQArrayE.length - 1)) {
+				System.out.print(",");
+			}
+		}
 		System.out.println("\n\nでした。直してきます...\n");
 
-
 		//ここに詰め替え処理を記述する
+		int emptynumber1 = 0;
+		int fullnumber1 = 0;
+		int emptynumber2 = 0;
+		int fullnumber2 = 0;
 
+		for (int i = 0; i < MQArrayC.length; i++) {
+
+			for (int j = emptynumber1; j < MQArrayC.length; j++) {
+				if (MQArrayC[j] == 0) {
+					emptynumber1 = j;
+					break;
+				}
+			}
+			for (int a = fullnumber1; a < MQArrayD.length; a++) {
+				if (MQArrayD[a] != 0) {
+					int num = MQArrayC[emptynumber1];
+					MQArrayC[emptynumber1] = MQArrayD[a];
+					MQArrayD[a] = num;
+
+					fullnumber1 = a;
+					break;
+				}
+			}
+		}
+
+		for (int i = 0; i < MQArrayD.length; i++) {
+
+			for (int j = emptynumber2; j < MQArrayD.length; j++) {
+				if (MQArrayD[j] == 0) {
+					emptynumber2 = j;
+					break;
+				}
+			}
+			for (int a = fullnumber2; a < MQArrayE.length; a++) {
+				if (MQArrayE[a] != 0) {
+					int num = MQArrayD[emptynumber2];
+					MQArrayD[emptynumber2] = MQArrayE[a];
+					MQArrayE[a] = num;
+
+					fullnumber2 = a;
+					break;
+				}
+			}
+		}
+		for (int i = 0; i < MQArrayE.length; i++) {
+			for (int j = 0; j < MQArrayE.length; j++) {
+				if (MQArrayE[i] > MQArrayE[j]) {
+					int num = MQArrayE[i];
+					MQArrayE[i] = MQArrayE[j];
+					MQArrayE[j] = num;
+				}
+			}
+		}
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayC.length; i++) {
+			System.out.print(MQArrayC[i]);
+			if (i != (MQArrayC.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayD.length; i++) {
+			System.out.print(MQArrayD[i]);
+			if (i != (MQArrayD.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayE.length; i++) {
+			System.out.print(MQArrayE[i]);
+			if (i != (MQArrayE.length - 1)) {
+				System.out.print(",");
+			}
+		}
 
 		System.out.println("\n\nになりました。\n");
 
